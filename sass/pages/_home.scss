@@ -1,0 +1,23 @@
+.container {
+    // background-image: url(../images/iceberg.svg);
+    background-position: center top; 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+}
+
+h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: orange;
+}
+
+.dough-wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+@media screen and (min-width: 768px) {
+
+   
+
+}
