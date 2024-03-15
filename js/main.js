@@ -1,6 +1,8 @@
 import { Dough, Topping, Donut } from './donutClasses.js';
 import { animateText } from "./modules/animated-text.js";
+import { animateTitle } from "./modules/animated-title.js";
 
+animateTitle();
 
 const doughs = [
     new Dough('Plain', 'plain.png'),
@@ -80,6 +82,7 @@ function updateDonutDisplay() {
         img.alt = donut.getDescription();
         display.appendChild(img);
         display.classList.remove('default-message'); 
+
     } else {
         display.textContent = 'Please select a dough and a topping to see your favorite donut!';
         display.classList.add('default-message'); 
@@ -90,3 +93,5 @@ function updateDonutDisplay() {
 renderSelections();
 
 updateDonutDisplay();
+
+
