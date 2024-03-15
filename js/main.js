@@ -1,14 +1,14 @@
-import { Dough, Topping, Donut } from './donutCLasses.js';
+import { Dough, Topping, Donut } from './donutClasses.js';
 import { animateText } from "./modules/animated-text.js";
 
 
 const doughs = [
-    new Dough('Plain', 'plain.jpg'),
-    new Dough('Chocolate', 'chocolate.jpg'),
+    new Dough('Plain', 'plain.png'),
+    new Dough('Chocolate', 'chocolate.png'),
 ];
 const toppings = [
-    new Topping('Sprinkles', 'sprinkles.jpg'),
-    new Topping('Nuts', 'nuts.jpg'),
+    new Topping('Peach', 'peach.png'),
+    new Topping('Persimmon', 'persimmon.png'),
 ];
 
 function renderSelections() {
