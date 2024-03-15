@@ -8,7 +8,7 @@ Keeping in mind that this is a big project, we use parcel.js with the main purpo
 
 # Credits
 
-Jong Woog Yun
+Jong Woog Yun, 
 Maria Camila Romero Contreras
 
 # License
