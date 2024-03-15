@@ -36,7 +36,7 @@ class Donut {
 
     getDonutImage() {
         // Placeholder for donut image logic
-        return `images/${this.dough.name}_${this.topping.name}.jpg`;
+        return `images/${this.dough.name}_${this.topping.name}.png`;
     }
 
     getDescription() {
