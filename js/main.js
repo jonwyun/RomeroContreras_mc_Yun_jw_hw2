@@ -1,6 +1,7 @@
 import { Dough, Topping, Donut } from './donutCLasses.js';
+import { animateText } from "./modules/animated-text.js";
 
-// Sample doughs and toppings
+
 const doughs = [
     new Dough('Plain', 'plain.jpg'),
     new Dough('Chocolate', 'chocolate.jpg'),
@@ -10,62 +11,67 @@ const toppings = [
     new Topping('Nuts', 'nuts.jpg'),
 ];
 
-// Function to render selections
 function renderSelections() {
     const doughContainer = document.querySelector('#doughSelection');
     doughs.forEach(dough => {
-        const wrapper = document.createElement('div'); // Create a wrapper for each dough
+        const wrapper = document.createElement('div'); 
 
-        const button = document.createElement('button');
-        button.textContent = dough.getName();
-        button.onclick = () => selectDough(dough);
+        const label = document.createElement('label');
+        const radio = document.createElement('input');
+        radio.type = 'radio';
+        radio.name = 'dough';
+        radio.value = dough.getName();
+        radio.onclick = () => selectDough(dough);
 
-        const img = document.createElement('img'); // Create an img element
-        img.src = `images/${dough.getImage()}`; // Set the source of the image
-        img.alt = dough.getName(); // Set the alt text
+        const img = document.createElement('img'); 
+        img.src = `images/${dough.getImage()}`; 
+        img.alt = dough.getName(); 
 
-        wrapper.appendChild(img); // Append the image to the wrapper
-        wrapper.appendChild(button); // Append the button to the wrapper
-        doughContainer.appendChild(wrapper); // Append the wrapper to the container
+        label.appendChild(radio); 
+        label.appendChild(img); 
+        label.appendChild(document.createTextNode(dough.getName())); 
+        wrapper.appendChild(label); 
+        doughContainer.appendChild(wrapper); 
     });
 
     const toppingContainer = document.querySelector('#toppingSelection');
     toppings.forEach(topping => {
-        const wrapper = document.createElement('div'); // Create a wrapper for each topping
+        const wrapper = document.createElement('div'); 
+        const label = document.createElement('label');
+        const radio = document.createElement('input');
+        radio.type = 'radio';
+        radio.name = 'topping';
+        radio.value = topping.getName();
+        radio.onclick = () => selectTopping(topping);
 
-        const button = document.createElement('button');
-        button.textContent = topping.getName();
-        button.onclick = () => selectTopping(topping);
+        const img = document.createElement('img'); 
+        img.src = `images/${topping.getImage()}`; 
+        img.alt = topping.getName(); 
 
-        const img = document.createElement('img'); // Create an img element
-        img.src = `images/${topping.getImage()}`; // Set the source of the image
-        img.alt = topping.getName(); // Set the alt text
-
-        wrapper.appendChild(img); // Append the image to the wrapper
-        wrapper.appendChild(button); // Append the button to the wrapper
-        toppingContainer.appendChild(wrapper); // Append the wrapper to the container
+        label.appendChild(radio); 
+        label.appendChild(img); 
+        label.appendChild(document.createTextNode(topping.getName())); 
+        wrapper.appendChild(label);
+        toppingContainer.appendChild(wrapper);
     });
 }
 
 let selectedDough = null;
 let selectedTopping = null;
 
-// Function to handle dough selection
 function selectDough(dough) {
     selectedDough = dough;
     updateDonutDisplay();
 }
 
-// Function to handle topping selection
 function selectTopping(topping) {
     selectedTopping = topping;
     updateDonutDisplay();
 }
 
-// Function to update the donut display based on selections
 function updateDonutDisplay() {
     const display = document.querySelector('#donutDisplay');
-    display.innerHTML = ''; // Clear previous content
+    display.innerHTML = ''; 
 
     if (selectedDough && selectedTopping) {
         const donut = new Donut(selectedDough, selectedTopping);
@@ -73,8 +79,14 @@ function updateDonutDisplay() {
         img.src = donut.getDonutImage();
         img.alt = donut.getDescription();
         display.appendChild(img);
+        display.classList.remove('default-message'); 
+    } else {
+        display.textContent = 'Please select a dough and a topping to see your favorite donut!';
+        display.classList.add('default-message'); 
+        animateText()
     }
 }
 
-// Initial render
 renderSelections();
+
+updateDonutDisplay();
