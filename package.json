@@ -1,0 +1,15 @@
+{
+  "name": "romerocontreras_mc_yun_jw_hw2",
+  "version": "1.0.0",
+  "description": "Welcome to the repository of Angry Dog Donuts, a captivating web project inspired by a fictional donut cafe nestled in the serene streets of Osaka, Japan. This project is not just about donuts; it's a showcase of modern web development techniques, responsive design, and the power of Object-Oriented Programming (OOP) in JavaScript.",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html --public-url ./"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
