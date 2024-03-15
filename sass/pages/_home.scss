@@ -1,23 +1,87 @@
-.container {
-    // background-image: url(../images/iceberg.svg);
-    background-position: center top; 
-    background-size: cover; 
-    background-repeat: no-repeat; 
+.title h1 {
+  text-align: center; 
+  background-image: url('images/image.jpg'); 
+  background-size: cover; 
+  background-position: center;
+  
+  padding: 50px 0; 
+  font-size: 2em; 
+  color: black;
+  @media screen and (min-width: 768px) {
+    padding: 100px 0; 
+    font-size: 3em; 
+  }
 }
 
-h1 {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: orange;
+h2 {
+  text-align: center;
+  padding: 20px 0; 
+  font-size: 1.4em; 
+  @media screen and (min-width: 768px) {
+    padding: 50px 0; 
+    font-size: 2em; 
+  }
 }
 
-.dough-wrapper {
-    display: flex;
-    justify-content: space-around;
+#doughSelection, #toppingSelection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  @media (min-width: 768px) {     
+    flex-direction: row; 
+    justify-content: space-evenly; 
+  }
 }
 
-@media screen and (min-width: 768px) {
+#doughSelection div, #toppingSelection div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
 
-   
+input[type="radio"] {
+  appearance: none;
+  width: 30px; 
+  height: 30px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  cursor: pointer;
+  order: 2; 
+}
 
+input[type="radio"]:checked {
+  background-color: #000;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  gap: 10px; 
+}
+
+img {
+  width: 200px; 
+  height: auto;
+  order: 1; 
+  @media (min-width: 1200px) {     
+    width: 220px;
+  }
+}
+
+#donutDisplay img {
+  width: 100%; 
+  height: auto; 
+  display: block; 
+}
+
+.default-message {
+  text-align:  center;
+  margin-bottom: 200px;
+  @media (min-width: 1200px) {     
+    font-size: 1.5em;
+  }
 }
